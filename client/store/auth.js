@@ -52,7 +52,7 @@ export const updateProfile = (user) => {
 
 export const logout = () => {
   window.localStorage.removeItem(TOKEN);
-  history.push("/login");
+  history.push("/home");
   return {
     type: SET_AUTH,
     auth: {},

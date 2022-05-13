@@ -64,11 +64,11 @@ class UpdateInstruments extends React.Component {
     let instruments = SortInstruments(sortValue, this.props.instruments);
     instruments = FilterInstruments(filterValue, instruments);
 
-    const indexOfLastOrder = currentPage * instrumentsPerPage;
-    const indexOfFirstOrder = indexOfLastOrder - instrumentsPerPage;
+    const indexOfLastInstrument = currentPage * instrumentsPerPage;
+    const indexOfFirstInstrument = indexOfLastInstrument - instrumentsPerPage;
     const currentinstruments = instruments.slice(
-      indexOfFirstOrder,
-      indexOfLastOrder
+      indexOfFirstInstrument,
+      indexOfLastInstrument
     );
 
     return (
@@ -81,7 +81,7 @@ class UpdateInstruments extends React.Component {
           <option value="price_des"> Price ↓</option>
         </select>
         <input
-          placeholder="search"
+          placeholder="Search instrument"
           value={filterValue}
           name="Search by instrument name"
           onChange={FilterChange}
