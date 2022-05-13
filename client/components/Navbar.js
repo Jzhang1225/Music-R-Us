@@ -51,9 +51,7 @@ class Navbar extends React.Component {
 
     return (
       <Container>
-        {isBanned ? (
-          <h1>Your Account is banned! Shame! Shame! Shame!</h1>
-        ) : (
+        {isBanned ? null : (
           <AppBar position="fixed" sx={{ bgcolor: "#0000CD" }}>
             <Container maxWidth="xl">
               {isLoggedIn ? (
