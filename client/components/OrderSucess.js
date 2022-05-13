@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { updateOrder, updateLineitem, guestCheckout } from "../store";
 import { Link } from "react-router-dom";
+import Container from "@mui/material/Container";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
 
 class OrderSuccess extends Component {
   constructor() {
@@ -25,19 +30,29 @@ class OrderSuccess extends Component {
   render() {
     const { auth } = this.props;
     return (
-      <>
-        <h2>Thanks for shopping at Music R Us, no refunds sorry! </h2>
-        {auth.id && (
-          <Link to="/orders">
-            <h2>Look at your orders?</h2>
-          </Link>
-        )}
-        {!auth.id && (
-          <Link to="/instruments">
-            <h2>Continue Shopping?</h2>
-          </Link>
-        )}
-      </>
+      <Container>
+        <Card aligncontent="space-around">
+          <CardMedia
+            component="img"
+            image={`/public/photos/fallingMoney.jpeg`}
+            height="225"
+          />
+          <CardContent>
+            <Typography>
+              Thanks for shopping at Music R Us, no refunds sorry!
+            </Typography>
+            {auth.id ? (
+              <Link to="/orders">
+                <h2>Look at your orders?</h2>
+              </Link>
+            ) : (
+              <Link to="/instruments">
+                <h2>Continue Shopping?</h2>
+              </Link>
+            )}
+          </CardContent>
+        </Card>
+      </Container>
     );
   }
 }

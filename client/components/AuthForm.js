@@ -4,8 +4,6 @@ import { authenticate } from "../store";
 import { GoogleLogin } from "react-google-login";
 import { useState } from "react";
 
-
-
 const AuthForm = (props) => {
   const { name, displayName, handleSubmit, authenticateGoogle, error } = props;
 
@@ -19,7 +17,6 @@ const AuthForm = (props) => {
   };
 
   const handleLogin = async (googleData) => {
-    console.log(googleData);
     const res = await fetch("/api/google-login", {
       method: "POST",
       body: JSON.stringify({
@@ -31,7 +28,11 @@ const AuthForm = (props) => {
     });
 
     const data = await res.json();
-    authenticateGoogle(data.username, 'sk_test_51KxgoTFLBZUhRlxbfrSGC1Ud5TFzr0COLTdnzKJA6FPf1HOezHV3bbzL80ZyEDR6mmRf0AJ4ZjTt8iGiKwgLNLz700VMoIszX6', "login");
+    authenticateGoogle(
+      data.username,
+      "sk_test_51KxgoTFLBZUhRlxbfrSGC1Ud5TFzr0COLTdnzKJA6FPf1HOezHV3bbzL80ZyEDR6mmRf0AJ4ZjTt8iGiKwgLNLz700VMoIszX6",
+      "login"
+    );
   };
 
   const handleLogout = () => {
@@ -68,15 +69,17 @@ const AuthForm = (props) => {
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
-        <GoogleLogin
-          clientId={
-            "662175514296-h4dm5bmcv28vvpcnenubrse9g470ccm7.apps.googleusercontent.com"
-          }
-          buttonText="Login with Google"
-          onSuccess={handleLogin}
-          onFailure={handleFailure}
-          cookiePolicy={"single_host_origin"}
-        />
+        displayName === "Login" && (
+          <GoogleLogin
+            clientId={
+              "662175514296-h4dm5bmcv28vvpcnenubrse9g470ccm7.apps.googleusercontent.com"
+            }
+            buttonText="Login with Google"
+            onSuccess={handleLogin}
+            onFailure={handleFailure}
+            cookiePolicy={"single_host_origin"}
+          />
+        )
       )}
     </div>
   );
