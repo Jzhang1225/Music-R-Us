@@ -80,12 +80,12 @@ class Routes extends Component {
         ) : (
           <Switch>
             <Route path="/home" exact component={Home} />
-            <Route path="/" exact component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
           </Switch>
         )}
         <Switch>
+          <Route path="/" exact component={Home} />
           <Route path="/categories/:id" exact component={Category} />
           <Route path="/categories" exact component={Categories} />
           <Route path="/brands/:id" exact component={Brand} />
