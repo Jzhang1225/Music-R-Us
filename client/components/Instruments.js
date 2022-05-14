@@ -46,10 +46,15 @@ class Instruments extends React.Component {
 
     const indexOfLastInstrument = currentPage * instrumentsPerPage;
     const indexOfFirstInstrument = indexOfLastInstrument - instrumentsPerPage;
-    const currentinstruments = instruments.slice(
-      indexOfFirstInstrument,
-      indexOfLastInstrument
-    );
+    let currentinstruments;
+    if (!filterValue) {
+      currentinstruments = instruments.slice(
+        indexOfFirstInstrument,
+        indexOfLastInstrument
+      );
+    } else {
+      currentinstruments = instruments;
+    }
 
     return (
       <Container>
@@ -118,7 +123,7 @@ class Instruments extends React.Component {
                     md={4}
                   >
                     <Card
-                      sx={{ width: 250, height: 350 }}
+                      sx={{ width: 250, minWidth: 250, height: 350 }}
                       aligncontent="space-around"
                     >
                       <CardActionArea>
