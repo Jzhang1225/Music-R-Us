@@ -1,4 +1,4 @@
-import { Box, Grid, CardMedia, Paper } from "@mui/material";
+import { Box, Grid, CardMedia, Paper, Typography } from "@mui/material";
 import React from "react";
 import { connect } from "react-redux";
 
@@ -26,6 +26,11 @@ export const Home = (props) => {
       <Paper elevation={0}>
         <CardMedia component="img" image={`/public/photos/default/Home.jpeg`} />
       </Paper>
+      <Grid container justifyContent="center">
+        <Typography>
+          Developed By : Jianing | Robert | Angel | Bharadwaj
+        </Typography>
+      </Grid>
     </Box>
   );
 };
