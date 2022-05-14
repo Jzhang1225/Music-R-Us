@@ -23,7 +23,6 @@ export const Home = (props) => {
         {" "}
         <h2>{welcome}</h2>{" "}
       </Grid>
-
       <Paper elevation={0}>
         <CardMedia component="img" image={`/public/photos/default/Home.jpeg`} />
       </Paper>
