@@ -7,6 +7,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import AddToCart from "./AddToCart";
+import { CardActions } from "@mui/material";
 
 export const Category = ({ instruments, brands, category }) => {
   const instrumentsList =
@@ -21,7 +23,7 @@ export const Category = ({ instruments, brands, category }) => {
           const brand = brands.find((brand) => brand.id === instrument.brandId);
           return (
             <Grid item xs={12} sm={6} md={4} key={instrument.id}>
-              <Card sx={{ maxWidth: 250, height: 350 }}>
+              <Card sx={{ width: 250, minWidth: 250, height: 400 }}>
                 <Link to={`/instruments/${instrument.id}`}>
                   <CardMedia
                     component="img"
@@ -39,6 +41,9 @@ export const Category = ({ instruments, brands, category }) => {
                     {"Brand:"}{" "}
                     <Link to={`/brands/${brand.id}`}>{brand.name}</Link>
                   </Typography>
+                  <CardActions>
+                    <AddToCart instrument={instrument} />
+                  </CardActions>
                 </CardContent>
               </Card>
             </Grid>

@@ -454,6 +454,16 @@ async function seed() {
       description:
         "The Roland K-25m is a 25-key, velocity sensitive keyboard designed for use with the Roland Boutique series. Measuring less than 12″ across, the K-25m acts as a dock for any Roland Boutique module, and once in place the module can be tilted at two different angles for easier viewing and sound programming, or can be laid completely flat. The compact keyboard can also address a range from -4 to +5 octaves when used with the relevant module.",
     }),
+    Instrument.create({
+      categoryId: Guitar.id,
+      category: "Guitar",
+      name: "PRS SE Silver Sky",
+      price: 3999,
+      brandId: PRS.id,
+      image: "prsSilver.jpg",
+      description:
+        "With the release of the SE Silver Sky, PRS has kept the modern design aesthetic, tone and feel of the original model and made it accessible to more guitar players, from beginner to professional. I couldn’t be happier it with it, said John Mayer. At the heart of the instrument are the three single-coil pickups, which were meticulously designed to capture the voicing of the original Silver Sky. The 635JM “S” pickups capture the same round, full tone with musical high end that is never too harsh and add a bit of a bite. This guitar is anchored by a two-point steel tremolo, synthetic bone nut, and vintage-style tuners. Other design features include the PRS Silver Sky inverted headstock shape and the PRS double-acting truss rod (accessible from the front of the headstock for ease of use). This instrument ships with PRS Classic 10-46 strings and a PRS SE gig bag.",
+    }),
   ]);
 
   const orders = await Promise.all([

@@ -7,12 +7,13 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { CardActionArea, CardActions } from "@mui/material";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 import Pagination from "@mui/material/Pagination";
+import AddToCart from "./AddToCart";
 
 class Instruments extends React.Component {
   constructor() {
@@ -123,7 +124,7 @@ class Instruments extends React.Component {
                     md={4}
                   >
                     <Card
-                      sx={{ width: 250, minWidth: 250, height: 350 }}
+                      sx={{ width: 250, minWidth: 250, height: 400 }}
                       aligncontent="space-around"
                     >
                       <CardActionArea>
@@ -148,6 +149,9 @@ class Instruments extends React.Component {
                           {" Category:"}
                           {category.name}
                         </Typography>
+                        <CardActions>
+                          <AddToCart instrument={instrument} />
+                        </CardActions>
                       </CardContent>
                     </Card>
                   </Grid>

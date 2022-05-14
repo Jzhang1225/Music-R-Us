@@ -32,7 +32,7 @@ export const SelectedInstrument = ({ instrument, brand, category }) => {
   };
   return (
     <Container>
-      <Card aligncontent="space-around" sx={{ maxWidth: 250 }}>
+      <Card aligncontent="space-around" sx={{ maxWidth: 350 }}>
         <CardMedia
           component="img"
           image={`/public/photos/${instrument.image}`}
