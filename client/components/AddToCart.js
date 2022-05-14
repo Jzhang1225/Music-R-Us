@@ -10,7 +10,7 @@ class AddToCart extends React.Component {
       stockMessage: "",
     };
   }
-  //comment//
+  //commentForpush//
 
   render() {
     const { quantity, stockMessage } = this.state;
