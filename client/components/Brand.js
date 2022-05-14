@@ -7,6 +7,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import AddToCart from "./AddToCart";
+import { CardActions } from "@mui/material";
 
 export const Brand = ({ instruments, brand, categories }) => {
   const instrumentsList = instruments.filter(
@@ -31,7 +33,7 @@ export const Brand = ({ instruments, brand, categories }) => {
             >
               <Card
                 key={instrument.id}
-                sx={{ width: 250, height: 350 }}
+                sx={{ width: 250, minWidth: 250, height: 400 }}
                 aligncontent="space-around"
               >
                 <Link to={`/instruments/${instrument.id}`}>
@@ -51,6 +53,9 @@ export const Brand = ({ instruments, brand, categories }) => {
                     {"Brand:"}{" "}
                     <Link to={`/brands/${brand.id}`}>{brand.name}</Link>
                   </Typography>
+                  <CardActions>
+                    <AddToCart instrument={instrument} />
+                  </CardActions>
                 </CardContent>
               </Card>
             </Grid>
