@@ -26,7 +26,7 @@ export const Brands = ({ brands }) => {
               md={4}
             >
               <Card
-                sx={{ width: 250, height: 350 }}
+                sx={{ width: 300, height: 350 }}
                 aligncontent="space-around"
               >
                 <Link to={`/brands/${brand.id}`}>
