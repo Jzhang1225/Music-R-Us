@@ -19,8 +19,7 @@ class Instruments extends React.Component {
     super(props);
     this.state = {
       currentPage: 1,
-      itemsPerPage: 10,
-      instruments: []
+      itemsPerPage: 7,
     };
   }
 
@@ -68,7 +67,7 @@ class Instruments extends React.Component {
           </Box>
         </Grid>
         <Grid container spacing={4}>
-          {instruments.map((instrument) => {
+          {currentInstruments.map((instrument) => {
             const brand = brands.find(
               (brand) => brand.id === instrument.brandId
             );
